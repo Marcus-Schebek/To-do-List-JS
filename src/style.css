@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    -225deg,
+    #3d4e81 0%,
+    #5753c9 48%,
+    #6e7ff3 100%
+  );
+  z-index: 0;
+}
+
+.container {
+  width: 40%;
+  min-width: 28.125em;
+  padding: 30px 20px;
+  position: absolute;
+}
+
+#newTask {
+  padding: 30px 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+#newTask input {
+  width: 70%;
+  height: 45px;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+  color: #111111;
+  font-weight: 500;
+  position: relative;
+  outline-color: #5753c9;
+}
+
+#newTask Button {
+  width: 20%;
+  height: 45px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 1em;
+  background-color: #5753c9;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  z-index: 2;
+}
+
+#newTask Button::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  background: #8ec5fc;
+  transition: all .5s ease;
+  z-index: -1;
+}
+#newTask Button::after{
+  width: 100%;
+  height: 0;
+
+  top: 0%;
+  left: 0%;
+}
+
+#newTask Button:hover::after{
+  height: 100%;
+}
+
+#tasks {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  margin-top: 60px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateX(-35%);
+}
+#tasks.animate{
+  animation-name: slideIn;
+  animation-duration: .7s;
+  animation-fill-mode: forwards;
+}
+
+.task {
+  height: 50px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #d1d3d4;
+  background-color: #ffffff;
+  opacity: 0;
+  transform: translateY(-50%);
+  animation-name: slideUp;
+  animation-duration: .7s;
+  animation-fill-mode: forwards;
+}
+
+.task span {
+  font-size: 15px;
+  font-weight: 400;
+  color: #3f4041;
+}
+
+.task button {
+  height: 100%;
+  width: 40px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #ffffff;
+  background-color: #5753c9;
+}
+
+.task button:hover{
+  background-color: #8ec5fc;
+  transition: .5s ease;
+}
+
+.completed {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+footer {
+  align-items: center;
+  position: fixed;
+  bottom: 15px;
+  color: #ffffff;
+}
+@keyframes slideIn {
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-device-width: 900px) {
+    body{
+        max-height: 100vh;
+    }
+    .container {
+    width: 35%;
+    min-width: 20em;
+  }
+  #newTask input {
+      height: 20px;
+  }
+  #newTask Button {
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    font-size: 15px;
+
+    border-radius: 20px;
+}
+}
