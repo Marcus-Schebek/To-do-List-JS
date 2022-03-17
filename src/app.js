@@ -1,5 +1,5 @@
 let addBtn = document.querySelector("#push");
-let inputTask = document.querySelector("#newTask input");
+let inputTask = document.querySelector("#newTaskInput");
 let tasks = document.querySelector("#tasks");
 let task = document.querySelector(".task");
 let taksOnDiv = 0;
@@ -57,4 +57,5 @@ chk.addEventListener("change", () => {
   document.body.classList.toggle("dark");
   addBtn.classList.toggle("dark");
   darkThemeChanger.classList.toggle("dark");
+  inputTask.classList.toggle("dark")
 });

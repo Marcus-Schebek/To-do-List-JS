@@ -105,6 +105,10 @@ body.dark {
   outline-color: #5753c9;
 }
 
+#newTask input.dark{
+  outline-color: #3f4041;
+}
+
 #push {
   width: 20%;
   height: 45px;
