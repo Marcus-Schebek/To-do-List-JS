@@ -17,8 +17,65 @@ body {
     #5753c9 48%,
     #6e7ff3 100%
   );
-  z-index: 0;
 }
+body.dark {
+	background:#29323c;
+}
+
+.darkTheme{
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  right: 2%;
+  top: 5%;
+  width: 8em;
+}
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #3d4e81;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+}
+.label.dark{
+  background-color: #485563;
+}
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f1c40f;
+}
+
 
 .container {
   width: 40%;
@@ -26,6 +83,7 @@ body {
   padding: 30px 20px;
   position: absolute;
 }
+
 
 #newTask {
   padding: 30px 20px;
@@ -47,7 +105,7 @@ body {
   outline-color: #5753c9;
 }
 
-#newTask Button {
+#push {
   width: 20%;
   height: 45px;
   border-radius: 5px;
@@ -62,7 +120,7 @@ body {
   z-index: 2;
 }
 
-#newTask Button::after{
+#push::after{
   content: "";
   width: 100%;
   height: 100%;
@@ -72,7 +130,7 @@ body {
   transition: all .5s ease;
   z-index: -1;
 }
-#newTask Button::after{
+#push::after{
   width: 100%;
   height: 0;
 
@@ -80,8 +138,15 @@ body {
   left: 0%;
 }
 
-#newTask Button:hover::after{
+#push:hover::after{
   height: 100%;
+}
+#push.dark::after{
+  background: #485563;
+}
+
+#push.dark{
+  background-color: #29323c;
 }
 
 #tasks {
@@ -134,7 +199,16 @@ body {
 
 .task button:hover{
   background-color: #8ec5fc;
-  transition: .5s ease;
+  transition: .5s;
+}
+
+.delete.dark{
+  background-color: #29323c;
+}
+
+.delete.dark:hover{
+  background-color: #485563;
+  transform: .5s;
 }
 
 .completed {
