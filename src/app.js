@@ -57,11 +57,4 @@ chk.addEventListener("change", () => {
   document.body.classList.toggle("dark");
   addBtn.classList.toggle("dark");
   darkThemeChanger.classList.toggle("dark");
-  if (chk.checked) {
-    current_tasks.forEach((x) => x.classList.add("dark"));
-  } else {
-    current_tasks.forEach((x) => x.classList.remove("dark"));
-  }
 });
-
-

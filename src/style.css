@@ -193,22 +193,8 @@ body.dark {
   border: none;
   cursor: pointer;
   outline: none;
-  color: #ffffff;
-  background-color: #5753c9;
-}
-
-.task button:hover{
-  background-color: #8ec5fc;
-  transition: .5s;
-}
-
-.delete.dark{
-  background-color: #29323c;
-}
-
-.delete.dark:hover{
-  background-color: #485563;
-  transform: .5s;
+  color: #5f5f5f;
+  background-color: transparent;
 }
 
 .completed {
